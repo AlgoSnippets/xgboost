@@ -7,9 +7,6 @@ from sklearn.ensemble import BaggingRegressor
 import matplotlib.pyplot as plt
 from xgboost import XGBRegressor
 
-import mplcyberpunk
-plt.style.use("cyberpunk")
-
 def calculate_metrics(y_true, y_pred):
     return {
         "MSE": mean_squared_error(y_true, y_pred),
@@ -84,7 +81,7 @@ def main():
         'subsample': [0.8, 1.0],
         'colsample_bytree': [0.8, 1.0]
     }
-    xgb = XGBRegressor(objective='reg:squarederror', random_state=41)
+    xgb = XGBRegressor(objective='reg:squarederror', random_state=42)
     grid_search = GridSearchCV(estimator=xgb, param_grid=param_grid, cv=kfold, n_jobs=-1, verbose=2)
     grid_search.fit(X_train_scaled, y_train)
 
@@ -126,7 +123,6 @@ def main():
     plt.ylabel('Future Return (%)')
     plt.grid(True)
     plt.legend()
-    plt.savefig(f"x/{ticker}_future_{target_days}_day_return_forecast.png")
 
     # Add metrics to the plot
     metrics_text = (

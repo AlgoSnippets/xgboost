@@ -24,7 +24,7 @@ This project forecasts future stock returns (e.g., for AAPL) using historical pr
 ### **Usage**
 
 1. **Prepare Data:**
-Place your stock CSV (e.g., `AAPL_data.csv`) in `data_cache/` with columns: `Date`, `Open`, `High`, `Low`, `Close`, `Volume`.
+   Place your stock CSV (e.g., `AAPL_data.csv`) in `data_cache/` with columns: `Date`, `Open`, `High`, `Low`, `Close`, `Volume`.
 2. **Run the Script:**
 
 ```bash
@@ -32,15 +32,15 @@ python main.py
 ```
 
 3. **Output:**
-    - Forecast plot saved in `x/`
-    - Console output: best parameters, metrics, top features
+   - Forecast plot saved in `x/`
+   - Console output: best parameters, metrics, top features
 
 ---
 
 ### **Requirements**
 
 - Python 3.7+
-- numpy, pandas, scikit-learn, matplotlib, xgboost, mplcyberpunk
+- numpy, pandas, scikit-learn, matplotlib, xgboost
 
 ---
 
